@@ -1,0 +1,16 @@
+<launch>
+
+
+  <node name="gscam_node" pkg="gscam" exec="gscam_node" output="screen">
+    <param name="gscam_config" value="v4l2src ! video/x-raw,framerate=30/1 ! videoconvert"/>
+    <param name="sync_sink" value="true"/>
+  </node>
+
+
+  <!-- <node name="gscam_node" pkg="gscam" exec="gscam_node" output="screen">
+    <param name="gscam_config" value="v4l2src ! image/jpeg, framerate=30/1 "/>
+    <param name="sync_sink" value="true"/>
+    <param name="image_encoding" value="jpeg"/>
+  </node> -->
+
+</launch>
