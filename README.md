@@ -1,7 +1,9 @@
-# BloX MOCAP4ROS2-Optitrack
+# BloX GSCam
 
-The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack System. It is based on the [MOCAP4ROS](https://github.com/MOCAP4ROS2-Project) project.
+The BloX GSCam streams images from a USB webcam.
 
 ## Data
 
-...
+Image is streamed as compressed mjpeg stream and can be visualized in Foxglove Studio
+![image](https://github.com/rosblox/blox-gscam/assets/20051567/02b57296-bee9-4b7a-9c84-b9a5b6fddd64)
+
