@@ -1,6 +1,18 @@
 {
   "configById": {
-    "SourceInfo!4kprafp": {}
+    "ImageViewPanel!vd6zb": {
+      "cameraTopic": "/camera/image_raw/compressed",
+      "enabledMarkerTopics": [],
+      "mode": "fit",
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "rotation": 0,
+      "synchronize": false,
+      "transformMarkers": false,
+      "zoom": 1
+    }
   },
   "globalVariables": {},
   "userNodes": {},
@@ -9,5 +21,5 @@
     "speed": 1,
     "messageOrder": "receiveTime"
   },
-  "layout": "SourceInfo!4kprafp"
+  "layout": "ImageViewPanel!vd6zb"
 }
