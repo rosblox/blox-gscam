@@ -21,6 +21,7 @@ services:
     ports:
       - 9090:9090
     restart: always
+    ipc: host
     command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 
   ros-gscam:
@@ -30,5 +31,6 @@ services:
     volumes:
       - ./config/pipeline.launch.xml:/opt/ros/humble/share/gscam/examples/pipeline.launch.xml
     devices:
-      - "/dev/video5:/dev/video0"
+      - /dev/video5:/dev/video0
+    ipc: host
     command: ros2 launch gscam pipeline.launch.xml
