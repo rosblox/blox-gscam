@@ -25,9 +25,10 @@ services:
 
   ros-gscam:
     image: ghcr.io/rosblox/ros-gscam:humble
+    network_mode: "host"
     restart: always
     volumes:
       - ./config/pipeline.launch.xml:/opt/ros/humble/share/gscam/examples/pipeline.launch.xml
     devices:
-      - "/dev/video0:/dev/video0"
+      - "/dev/video5:/dev/video0"
     command: ros2 launch gscam pipeline.launch.xml
