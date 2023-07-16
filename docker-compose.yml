@@ -21,16 +21,19 @@ services:
     ports:
       - 9090:9090
     restart: always
-    ipc: host
     command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 
   ros-gscam:
     image: ghcr.io/rosblox/ros-gscam:humble
-    network_mode: "host"
     restart: always
     volumes:
       - ./config/pipeline.launch.xml:/opt/ros/humble/share/gscam/examples/pipeline.launch.xml
     devices:
       - /dev/video5:/dev/video0
+    network_mode: "host"
     ipc: host
-    command: ros2 launch gscam pipeline.launch.xml
+    pid: host
+    environment: 
+      - UID=1000
+      - GID=1000
+    command: "su - ros /run.sh"
