@@ -16,13 +16,13 @@ services:
       - 8080:8080
     restart: always
 
-  ros-rosbridge-suite:
-    image: ghcr.io/rosblox/ros-rosbridge-suite:humble
-    network_mode: "bridge"
-    ports:
-      - 9090:9090
-    restart: always
-    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+#  ros-rosbridge-suite:
+#    image: ghcr.io/rosblox/ros-rosbridge-suite:humble
+#    network_mode: "bridge"
+#    ports:
+#      - 9090:9090
+#    restart: always
+#    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 
   ros-gscam:
     image: ghcr.io/rosblox/ros-gscam:humble
@@ -34,7 +34,7 @@ services:
     network_mode: "host"
     ipc: host
     pid: host
-    environment: 
+    environment:
       - UID=1000
       - GID=1000
     command: "su - ros /run.sh"
